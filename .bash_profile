@@ -4,7 +4,11 @@ alias ll='ls -alF'
 alias gh="open https://github.\$(git config remote.origin.url | cut -f2 -d. | tr ':' /)"
 alias sudo='sudo '
 
+# Random password generator
+alias rando='echo "$(< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c20 | xargs echo)"'
+
 alias v="ansible-vault --vault-password-file ~/.vaultpw "
+alias ed="edit"
 alias d="decrypt"
 alias e="encrypt"
 
