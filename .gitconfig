@@ -1,21 +1,28 @@
 [alias]
-  # See http://cat.pdx.edu/~hunner/git-lg.png for an example
-  lg = "log --pretty=format:'%C(yellow)%h%C(reset) %C(blue)%an%C(reset) %C(cyan)%cr%C(reset) %s %C(green)%d%C(reset)' --graph --date-order"
-  br = "branch -a"
-  st = "status"
-  co = "checkout"
-  switch = !legit switch \"$@\"
-  branches = !legit branches
-  sprout = !legit sprout \"$@\"
-  unpublish = !legit unpublish \"$@\"
-  harvest = !legit harvest \"$@\"
-  sync = !legit sync \"$@\"
-  publish = !legit publish \"$@\"
-  graft = !legit graft \"$@\"
+    # See http://cat.pdx.edu/~hunner/git-lg.png for an example
+    lg = "log --pretty=format:'%C(yellow)%h%C(reset) %C(blue)%an%C(reset) %C(cyan)%cr%C(reset) %s %C(green)%d%C(reset)' --graph --date-order"
+    br = "branch -a"
+    brd = "branch -d"
+    st = "status"
+    co = "checkout"
+    switch = !legit switch \"$@\"
+    branches = !legit branches
+    sprout = !legit sprout \"$@\"
+    unpublish = !legit unpublish \"$@\"
+    harvest = !legit harvest \"$@\"
+    sync = !legit sync \"$@\"
+    publish = !legit publish \"$@\"
+    graft = !legit graft \"$@\"
 [color]
     ui = true
-[user]
-  name = Ben Whaley
-  email = bwhaley@gmail.com
+[core]
+    mergeoptions = --no-edit
+[push]
+	default = current
 [url "git@github.com:"]
   insteadOf = https://github.com/
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
