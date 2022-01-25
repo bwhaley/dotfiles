@@ -70,9 +70,32 @@ CLI tools to impress your date.
   - `brew install broot`
   - Install font for icons: https://dystroy.org/broot/icons/
 
+- deno - A modern runtime for JavaScript and TypeScript.
+  - `brew install deno`
+
+- node 
+  - `asdf install nodejs latest`
+
+- terraform
+  - Install latest using asdf
+  - Install < 1.0.2 manually:
+    - Example:
+    - `curl -L 'https://github.com/hashicorp/terraform/archive/v0.14.11.tar.gz' | tar -xzf-`
+    - `GOARCH=amd64 go build -o ~/terraform`
+    - `md ~/.asdf/installs/terraform/0.14.11/bin`
+    - `mv ~/terraform ~/.asdf/installs/terraform/0.14.11/bin`
+    - `asdf reshim terraform 0.14.11`
+
+
+
+
+
 ## Vim
 
 Check out `.vimrc` for the configuration. Here are a few notes.
 
+1. Install vim with `asdf` to replace Macos system vim which doesn't include some nice features.
+  1. `asdf install vim latest`
+  1. `asdf global vim latest`
 1. Install [`vim-plug`](https://github.com/junegunn/vim-plug)
 
